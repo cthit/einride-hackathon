@@ -2,6 +2,31 @@
 
 Please change the branch to use one of our provided templates.
 
+## C#
+
+This is a normal .NET Core C# project. To run the program, simply open your
+terminal and enter `dotnet run`. It can also be run from Visual Studio by
+opening the `donkeycar.csproj` file.
+
+The project contains a `DonkeyCarClient` class that is setup to communicate with
+the DonkeyCar. Create an instance by providing host name (or IP address) and
+port, then use the `Send` method to send commands to the car, and the
+`FetchFrame` method to collect the latest frame from the cars camera.
+
+Take a look at the `Main` function to see the client and it's methods in action.
+
+### Emgu.CV
+
+Watch out for common pitfalls when using Emgu.CV on Linux of MaxOS. Look through
+the [Download And Installation](https://www.emgu.com/wiki/index.php/Download_And_Installation)
+wiki page for instructions and remember to update the nuget dependency in
+`donkeycar.csproj`.
+
+Emgu.CV can also easily be removed by removing the specified line in
+`donkeycar.csproj`. When programming without Emgu.CV the static method
+`ConstructVideoUrl` can be useful to, as the name suggests, construct a string
+containing the URL to the video feed.
+
 ## Connect to your car
 
 Setup up a WiFi with the following settings:

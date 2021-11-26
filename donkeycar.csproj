@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+		<!-- Remove the following line to disable OPEN_CV (Emgu.CV) -->
+		<DefineConstants>OPEN_CV</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Websocket.Client" Version="4.3.38" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(DefineConstants.Contains(`OPEN_CV`))">
+		<PackageReference Include="Emgu.CV" Version="4.5.3.4721" />
+		<PackageReference Include="Emgu.CV.runtime.windows" Version="4.5.3.4721" />
+	</ItemGroup>
+
+</Project>
